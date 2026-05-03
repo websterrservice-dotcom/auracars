@@ -294,9 +294,11 @@ function setupTheme() {
     });
   });
 
-  if (localStorage.getItem("auracars_theme") === "light") {
-    document.body.classList.add("light");
-  }
+if (localStorage.getItem("auracars_theme") === "dark") {
+  // يبقى dark إلا كان user مختارو
+} else {
+  document.body.classList.add("light");
+}
   applyIcon();
 }
 
