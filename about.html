@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>À propos | AURACARS</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav glass">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <div class="logo"><i class="fas fa-car-side"></i></div>
+      <span>AURACARS<small>Premium Rental</small></span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="index.html" data-i18n="navHome">Accueil</a>
+      <a href="cars.html" data-i18n="navCars">Voitures</a>
+      <a href="about.html" data-i18n="navAbout">À propos</a>
+      <a href="contact.html" data-i18n="navContact">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="theme-btn" type="button"><i class="fas fa-sun"></i></button>
+      <button class="lang-btn" id="langBtn" type="button"><i class="fas fa-language"></i> English</button>
+    </div>
+
+    <button class="menu-btn" id="menuBtn" type="button"><i class="fas fa-bars"></i></button>
+  </div>
+
+  <div class="mobile-panel glass">
+    <a href="index.html" data-i18n="navHome">Accueil</a>
+    <a href="cars.html" data-i18n="navCars">Voitures</a>
+    <a href="about.html" data-i18n="navAbout">À propos</a>
+    <a href="contact.html" data-i18n="navContact">Contact</a>
+    <button class="theme-btn" type="button"><i class="fas fa-sun"></i></button>
+    <button class="lang-btn" id="mobileLangBtn" type="button"><i class="fas fa-language"></i> English</button>
+  </div>
+</header>
+
+
+<main>
+  <section class="page-title">
+    <div class="container section-head">
+      <div class="overline">Premium Rental</div>
+      <h2 data-i18n="aboutTitle">À propos de AURACARS</h2>
+      <p data-i18n="aboutText1">AURACARS est une solution de location de voitures pensée pour les clients qui veulent réserver rapidement.</p>
+    </div>
+  </section>
+
+  <section style="padding-top: 20px;">
+    <div class="container grid-3">
+      <div class="info-card glass">
+        <i class="fas fa-car-side"></i>
+        <h3>Voitures sélectionnées</h3>
+        <p>Présentez vos véhicules avec des images propres, prix et détails clairs.</p>
+      </div>
+      <div class="info-card glass">
+        <i class="fab fa-whatsapp"></i>
+        <h3>Réservation directe</h3>
+        <p>Chaque offre peut envoyer le client directement vers WhatsApp avec la voiture choisie.</p>
+      </div>
+      <div class="info-card glass">
+        <i class="fas fa-crown"></i>
+        <h3>Image premium</h3>
+        <p data-i18n="aboutText2">Notre objectif est simple : voitures propres, prix transparents et contact direct.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer"><div class="container" data-i18n="footer">© 2026 AURACARS — Location de voitures via WhatsApp</div></footer>
+<a href="#" class="to-top"><i class="fas fa-arrow-up"></i></a>
+<script src="script.js"></script>
+</body>
+</html>

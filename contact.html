@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Contact | AURACARS</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav glass">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <div class="logo"><i class="fas fa-car-side"></i></div>
+      <span>AURACARS<small>Premium Rental</small></span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="index.html" data-i18n="navHome">Accueil</a>
+      <a href="cars.html" data-i18n="navCars">Voitures</a>
+      <a href="about.html" data-i18n="navAbout">À propos</a>
+      <a href="contact.html" data-i18n="navContact">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="theme-btn" type="button"><i class="fas fa-sun"></i></button>
+      <button class="lang-btn" id="langBtn" type="button"><i class="fas fa-language"></i> English</button>
+    </div>
+
+    <button class="menu-btn" id="menuBtn" type="button"><i class="fas fa-bars"></i></button>
+  </div>
+
+  <div class="mobile-panel glass">
+    <a href="index.html" data-i18n="navHome">Accueil</a>
+    <a href="cars.html" data-i18n="navCars">Voitures</a>
+    <a href="about.html" data-i18n="navAbout">À propos</a>
+    <a href="contact.html" data-i18n="navContact">Contact</a>
+    <button class="theme-btn" type="button"><i class="fas fa-sun"></i></button>
+    <button class="lang-btn" id="mobileLangBtn" type="button"><i class="fas fa-language"></i> English</button>
+  </div>
+</header>
+
+
+<main>
+  <section class="page-title">
+    <div class="container section-head">
+      <div class="overline">WhatsApp Booking</div>
+      <h2 data-i18n="contactTitle">Réserver maintenant</h2>
+      <p data-i18n="contactText">Remplissez les informations ci-dessous.</p>
+    </div>
+  </section>
+
+  <section style="padding-top: 20px;">
+    <div class="container contact-layout">
+      <div class="contact-card glass">
+        <h3 data-i18n="directContact">Contact direct</h3>
+        <div class="contact-list">
+          <a class="contact-item" href="tel:+212724144983">
+            <i class="fas fa-phone"></i>
+            <div><strong>Phone</strong><br>0724144983</div>
+          </a>
+          <a class="contact-item" href="mailto:webterr.service@gmail.com">
+            <i class="fas fa-envelope"></i>
+            <div><strong>Email</strong><br>webterr.service@gmail.com</div>
+          </a>
+          <a class="contact-item" href="https://wa.me/212724144983" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            <div><strong>WhatsApp</strong><br>+212 724144983</div>
+          </a>
+        </div>
+      </div>
+
+      <form class="form-card glass" id="bookingForm">
+        <div class="form-grid">
+          <div class="field">
+            <label data-i18n="name">Nom complet</label>
+            <input id="clientName" type="text" placeholder="Votre nom">
+          </div>
+          <div class="field">
+            <label data-i18n="phone">Téléphone</label>
+            <input id="clientPhone" type="tel" placeholder="06...">
+          </div>
+          <div class="field">
+            <label data-i18n="car">Voiture</label>
+            <select id="selectedCar"></select>
+          </div>
+          <div class="field">
+            <label data-i18n="city">Ville</label>
+            <input id="city" type="text" placeholder="Agadir, Marrakech...">
+          </div>
+          <div class="field">
+            <label data-i18n="startDate">Date début</label>
+            <input id="startDate" type="date">
+          </div>
+          <div class="field">
+            <label data-i18n="endDate">Date fin</label>
+            <input id="endDate" type="date">
+          </div>
+          <div class="field full">
+            <label data-i18n="note">Durée / remarque</label>
+            <textarea id="note" placeholder="Ex: 3 jours, livraison à l’aéroport..."></textarea>
+          </div>
+          <div class="field full">
+            <button class="btn btn-primary" type="submit">
+              <i class="fab fa-whatsapp"></i> <span data-i18n="send">Envoyer sur WhatsApp</span>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="footer"><div class="container" data-i18n="footer">© 2026 AURACARS — Location de voitures via WhatsApp</div></footer>
+<a href="#" class="to-top"><i class="fas fa-arrow-up"></i></a>
+<script src="script.js"></script>
+</body>
+</html>
