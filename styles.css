@@ -609,23 +609,33 @@ option { color: #0f172a; }
 }
 
 /* =========================================================
-   FINAL EFFECTS — ONLY FOR CAR CARDS
-   - blue glowing line only around car cards border
-   - zoom only on car images
-   - hero image has NO effect
+   AURACARS — FINAL FIXES
+   - Blue rotating border ONLY for car cards
+   - Hero image has no effect
+   - AURACARS text above hero image is black
+   - Mobile performance optimized
    ========================================================= */
 
-/* Hero text above image: black */
+/* Hero image text */
 .car-showcase::before {
   color: #000 !important;
 }
 
-/* Car cards only */
+/* Keep hero image clean: no rotating effect */
+.car-showcase {
+  transition: none;
+}
+
+.car-showcase:hover {
+  transform: none;
+}
+
+/* Blue rotating border only for car cards */
 .car-card {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  border: 1px solid rgba(56,189,248,0.28);
+  border: 1px solid rgba(56,189,248,0.30);
   transition:
     transform .35s cubic-bezier(.2,.9,.2,1),
     box-shadow .35s ease,
@@ -637,7 +647,6 @@ option { color: #0f172a; }
   z-index: 2;
 }
 
-/* Blue rotating line only on car card border */
 .car-card::after {
   content: "";
   position: absolute;
@@ -648,10 +657,10 @@ option { color: #0f172a; }
     from var(--border-angle),
     transparent 0deg,
     transparent 285deg,
-    rgba(56,189,248,0.05) 300deg,
+    rgba(56,189,248,0.08) 300deg,
     rgba(56,189,248,1) 318deg,
     rgba(125,211,252,1) 332deg,
-    rgba(56,189,248,0.05) 348deg,
+    rgba(56,189,248,0.08) 348deg,
     transparent 360deg
   );
   -webkit-mask:
@@ -659,10 +668,10 @@ option { color: #0f172a; }
     linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
-  animation: rotateBorderLine 3.2s linear infinite;
-  filter: drop-shadow(0 0 8px rgba(56,189,248,.9));
+  animation: rotateCarBorder 3.2s linear infinite;
+  filter: drop-shadow(0 0 7px rgba(56,189,248,.9));
   pointer-events: none;
-  z-index: 3;
+  z-index: 5;
 }
 
 @property --border-angle {
@@ -671,12 +680,13 @@ option { color: #0f172a; }
   inherits: false;
 }
 
-@keyframes rotateBorderLine {
+@keyframes rotateCarBorder {
   to {
     --border-angle: 360deg;
   }
 }
 
+/* Car hover */
 .car-card:hover {
   transform: translateY(-10px) scale(1.012);
   border-color: rgba(56,189,248,0.55);
@@ -685,7 +695,7 @@ option { color: #0f172a; }
     0 0 28px rgba(56,189,248,.18);
 }
 
-/* Zoom only for car images */
+/* Zoom only car images */
 .car-img {
   overflow: hidden;
 }
@@ -719,14 +729,6 @@ option { color: #0f172a; }
   transform: translateY(-10px) scale(1.012);
 }
 
-/* No hover effect on hero image */
-.car-showcase:hover,
-.info-card:hover,
-.contact-card:hover,
-.form-card:hover {
-  transform: translateY(-8px);
-}
-
 /* Avoid page opening in the middle */
 html,
 body {
@@ -735,4 +737,37 @@ body {
 
 section {
   scroll-margin-top: 96px;
+}
+
+/* Mobile performance fix */
+@media (max-width: 768px) {
+  body::after {
+    animation: none;
+    filter: blur(28px);
+  }
+
+  .glass {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .car-card::after {
+    display: none;
+  }
+
+  .car-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0,0,0,.18);
+  }
+
+  .car-card:hover .car-img img {
+    transform: scale(1.03);
+  }
+
+  .reveal-scroll,
+  .reveal-scroll.revealed {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
